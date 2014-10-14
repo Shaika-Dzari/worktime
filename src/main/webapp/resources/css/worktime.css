@@ -1,0 +1,8 @@
+.headerBar {
+	background-color: #0e99c1;
+	height: 80px;
+	border-bottom: 1px solid #ddd;
+}
+.frm-login {
+	max-width:400px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head :: head">
+<title>Worktime</title>
+<!-- Bootstrap -->
+<link href="../../resources/css/bootstrap.min.css"
+	th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+</head>
+<body>
+
+
+	<div class="container">
+
+		<form class="frm-login" role="form">
+			<h2 class="frm-login-heading">Please sign in</h2>
+			<input type="email" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" /> 
+			<input type="password" class="form-control" placeholder="Password" required="required" /> 
+			<label class="checkbox"> 
+				<input type="checkbox" value="remember-me" />
+				Remember me
+			</label>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		</form>
+
+	</div>
+
+</body>
+</html>
