@@ -6,19 +6,26 @@
  */
 package ca.n4dev.dev.worktime.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author rguillemette
- * @since Oct 13, 2014
+ * @since Oct 14, 2014
  */
 @Controller
-public class LoginController {
+public class TimeController {
+
 	
-	@RequestMapping(value = "/tlogin", method = RequestMethod.GET)
-	public String login() {
-		return "login";
+	@RequestMapping(value = "/time", method = RequestMethod.GET)
+	public String test() {
+		return getPage();
+	}
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public String getPage() {
+		return "time";
 	}
 }

@@ -27,7 +27,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @ComponentScan(basePackages = "ca.n4dev.dev.worktime")
 @EnableWebMvc
-@Import({ SpringHibernateJPAConfig.class, ThymeleafMvcConfig.class })
+@Import({ SpringHibernateJPAConfig.class, ThymeleafMvcConfig.class, SecurityConfig.class })
 @PropertySource("classpath:worktime.properties")
 public class ApplicationConfig extends WebMvcConfigurerAdapter {
 

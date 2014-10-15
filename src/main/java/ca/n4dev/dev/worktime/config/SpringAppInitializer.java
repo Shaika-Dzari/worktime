@@ -14,8 +14,9 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
-
+ 
 /**
  * @author rguillemette
  * @since Sep 30, 2014
@@ -34,6 +35,9 @@ public class SpringAppInitializer implements WebApplicationInitializer {
 		ServletRegistration.Dynamic dispatcher = servletContext.addServlet(
 				"DispatcherServlet", new DispatcherServlet(context));
 
+		//servletContext.addFilter("springSecurityFilterChain", new DelegatingFilterProxy("springSecurityFilterChain")).addMappingForUrlPatterns(null, false, "/*");
+
+	
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping(MAPPING_URL);
 	}
@@ -43,5 +47,6 @@ public class SpringAppInitializer implements WebApplicationInitializer {
 		context.setConfigLocation(CONFIG_LOCATION);
 		return context;
 	}
-
+	
+	
 }
